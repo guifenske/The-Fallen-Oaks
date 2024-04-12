@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cxvajjxg11aqu"
+path="res://.godot/imported/Andar_arma.aseprite-f616eed7320d96233f4f9e760ba12973.res"
+
+[deps]
+
+source_file="res://sprites/Player/Andar_arma/Andar_arma.aseprite"
+dest_files=["res://.godot/imported/Andar_arma.aseprite-f616eed7320d96233f4f9e760ba12973.res"]
+
+[params]
+

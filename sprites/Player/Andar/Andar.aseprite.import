@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://d08dctsjn503d"
+path="res://.godot/imported/Andar.aseprite-12328069fb801a59c469507332835d72.res"
+
+[deps]
+
+source_file="res://sprites/Player/Andar/Andar.aseprite"
+dest_files=["res://.godot/imported/Andar.aseprite-12328069fb801a59c469507332835d72.res"]
+
+[params]
+

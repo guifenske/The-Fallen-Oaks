@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://ciaa36def8mxl"
+path="res://.godot/imported/Tiro_carregado.aseprite-1d966d944f144259e690ff17ad5a5279.res"
+
+[deps]
+
+source_file="res://sprites/Player/Atirar/Tiro_carregado/Tiro_carregado.aseprite"
+dest_files=["res://.godot/imported/Tiro_carregado.aseprite-1d966d944f144259e690ff17ad5a5279.res"]
+
+[params]
+

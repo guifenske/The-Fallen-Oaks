@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://duk26qbb5fysp"
+path="res://.godot/imported/Bullet.aseprite-82b4b69931dc08e6da1e755ab6f20567.res"
+
+[deps]
+
+source_file="res://sprites/Player/Bullet/Bullet.aseprite"
+dest_files=["res://.godot/imported/Bullet.aseprite-82b4b69931dc08e6da1e755ab6f20567.res"]
+
+[params]
+

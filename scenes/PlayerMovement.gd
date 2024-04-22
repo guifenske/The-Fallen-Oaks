@@ -10,30 +10,45 @@ var gunNodeScene = preload("res://scenes/gun.tscn")
 var isGunInstantiated = false
 @onready var main = get_tree().get_root().get_node("main")
 var gun = null
+var bulletNodeScene = preload("res://scenes/bullet.tscn")
+var bullet = null
 
 func instantiate_gun():
 	gun = gunNodeScene.instantiate(PackedScene.GEN_EDIT_STATE_DISABLED)
-	main.add_child(gun)
 	gun.position = position
+	main.add_child(gun)
+	
+func instantiate_bullet():
+		bullet = bulletNodeScene.instantiate(PackedScene.GEN_EDIT_STATE_DISABLED)
+		bullet.position = gun.position
+		bullet.look_at(get_global_mouse_position())
+		main.add_child(bullet)
 
 func _physics_process(delta):
+	var direction = Input.get_axis("left", "right")
 	if(hasGun && !isGunInstantiated):
-		print("test")
 		isGunInstantiated = true
 		instantiate_gun()
 	
 	if(hasGun):
-		gun.position = position	
+		gun.position = position
 		gun.position.x -= 3
 		gun.position.y += 10
-		gun.look_at(get_global_mouse_position())	
-	
-	var direction = Input.get_axis("left", "right")
-	
-	if(Input.is_action_pressed("mouse_right")):
-		isShooting = true
-	else:
-		isShooting = false
+		gun.look_at(get_global_mouse_position())
+		if(Input.is_action_pressed("mouse_right")):
+			isShooting = true			
+			if(direction == 0):	sprite.animation = "player_gun_shoot"
+			else: sprite.animation = "walking_shooting"
+			
+			if(sprite.flip_h && get_global_mouse_position().x > position.x):
+				sprite.flip_h = false
+			elif(!sprite.flip_h && get_global_mouse_position().x < position.x):
+				sprite.flip_h = true	
+			
+			gun.animation = "shoot"
+		else:
+			isShooting = false
+			gun.animation = "idle"
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") && is_on_floor():
@@ -42,11 +57,12 @@ func _physics_process(delta):
 	if(direction != 0):
 		if(isShooting):
 			sprite.animation = "walking_shooting"
-		sprite.animation = "walking"
-		if(direction < 0):	sprite.flip_h = true
-		else: sprite.flip_h = false
+		else:	
+			sprite.animation = "walking"
+			if(direction < 0):	sprite.flip_h = true
+			else: sprite.flip_h = false
 	else:
-		sprite.animation = "idle"
+		if(!isShooting):	sprite.animation = "idle"
 		
 	velocity.x = direction * SPEED
 	# Add the gravity.

@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2w1tt00bqc17"]
+[gd_scene load_steps=11 format=3 uid="uid://d2w1tt00bqc17"]
 
 [ext_resource type="Texture2D" uid="uid://ccnnkt8pp4ygp" path="res://sprites/Player/Atirar/Tiro_normal/Tiro_normal_arma-Sheet.png" id="1_wp5l0"]
 [ext_resource type="Texture2D" uid="uid://5wnskr2ypxj7" path="res://sprites/Player/Atirar/Tiro_carregado/Tiro_carregado_arma-Sheet.png" id="2_b6d3j"]
+[ext_resource type="Script" path="res://scenes/gun.gd" id="3_icutj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vxice"]
 atlas = ExtResource("1_wp5l0")
@@ -70,5 +71,8 @@ animations = [{
 position = Vector2(790, 518)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_ivrq1")
-animation = &"idle"
+animation = &"shoot"
 autoplay = "idle"
+script = ExtResource("3_icutj")
+
+[connection signal="animation_looped" from="." to="." method="_on_animation_looped"]

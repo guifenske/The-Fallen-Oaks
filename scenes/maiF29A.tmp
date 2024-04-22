@@ -1,7 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://c6o6bany3fxa7"]
+[gd_scene load_steps=26 format=3 uid="uid://c6o6bany3fxa7"]
 
 [ext_resource type="Texture2D" uid="uid://cc06r44qc4akl" path="res://sprites/Player/Idle/Idle-Sheet.png" id="1_2tqrc"]
-[ext_resource type="Script" path="res://scenes/main.gd" id="1_147my"]
 [ext_resource type="Texture2D" uid="uid://c82tl3jgi2f3o" path="res://sprites/background.png" id="1_njilj"]
 [ext_resource type="Texture2D" uid="uid://4a1moetuykyv" path="res://sprites/Terrain (16x16).png" id="2_l5006"]
 [ext_resource type="Script" path="res://scenes/PlayerMovement.gd" id="3_2w250"]
@@ -715,7 +714,6 @@ animations = [{
 }]
 
 [node name="main" type="Node"]
-script = ExtResource("1_147my")
 
 [node name="world" type="Node" parent="."]
 unique_name_in_owner = true
@@ -755,3 +753,5 @@ sprite_frames = SubResource("SpriteFrames_fphds")
 animation = &"walking_shooting"
 autoplay = "idle"
 offset = Vector2(0.25, 0.5)
+
+[connection signal="animation_looped" from="player/CharacterBody2D/spritePlayer" to="player/CharacterBody2D" method="_on_sprite_player_animation_looped"]

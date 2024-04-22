@@ -1,0 +1,1 @@
+O tamanho do sprite da arma é 9x4(vertical x horizontal)

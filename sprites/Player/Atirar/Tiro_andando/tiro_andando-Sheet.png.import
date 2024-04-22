@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c77npili4pel4"
-path="res://.godot/imported/level_spritesheet.png-26a44dd21a040a5480d5ccba54377d99.ctex"
+uid="uid://dwbgxg4ij0726"
+path="res://.godot/imported/tiro_andando-Sheet.png-9adfd705b1da9196070c42548f0c767b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/phantom_camera/examples/textures/2D/level_spritesheet.png"
-dest_files=["res://.godot/imported/level_spritesheet.png-26a44dd21a040a5480d5ccba54377d99.ctex"]
+source_file="res://sprites/Player/Atirar/Tiro_andando/tiro_andando-Sheet.png"
+dest_files=["res://.godot/imported/tiro_andando-Sheet.png-9adfd705b1da9196070c42548f0c767b.ctex"]
 
 [params]
 

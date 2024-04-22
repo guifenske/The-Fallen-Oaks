@@ -1,15 +1,13 @@
-[gd_scene load_steps=31 format=3 uid="uid://c6o6bany3fxa7"]
+[gd_scene load_steps=26 format=3 uid="uid://c6o6bany3fxa7"]
 
 [ext_resource type="Texture2D" uid="uid://cc06r44qc4akl" path="res://sprites/Player/Idle/Idle-Sheet.png" id="1_2tqrc"]
 [ext_resource type="Texture2D" uid="uid://c82tl3jgi2f3o" path="res://sprites/background.png" id="1_njilj"]
-[ext_resource type="Texture2D" uid="uid://b8byw7ijqiuqs" path="res://sprites/Player/Cair/Cair-Sheet.png" id="1_s6c6h"]
 [ext_resource type="Texture2D" uid="uid://4a1moetuykyv" path="res://sprites/Terrain (16x16).png" id="2_l5006"]
 [ext_resource type="Script" path="res://scenes/PlayerMovement.gd" id="3_2w250"]
-[ext_resource type="Texture2D" uid="uid://vkitekhi4l47" path="res://sprites/Player/Atirar/Tiro_carregado/Tiro_carregado-Sheet.png" id="6_vmwly"]
-[ext_resource type="Texture2D" uid="uid://c5eh6pkwi6id3" path="res://sprites/Player/Atirar/Tiro_normal/Tiro_normal-Sheet.png" id="7_6owue"]
-[ext_resource type="Texture2D" uid="uid://cf3sp0kqhycu1" path="res://sprites/Player/Idle_arma/Idle_arma-Sheet.png" id="7_gsab5"]
+[ext_resource type="Texture2D" uid="uid://yune6n4wv7k0" path="res://sprites/Player/Atirar/Tiro_normal/Tiro_normal_player-Sheet.png" id="5_oc6j4"]
+[ext_resource type="Texture2D" uid="uid://cxo805i7fqxd7" path="res://sprites/Player/Atirar/Tiro_carregado/Tiro_carregado_player-Sheet.png" id="6_n6e2w"]
 [ext_resource type="Texture2D" uid="uid://c57w4ik8e71vt" path="res://sprites/Player/Andar/Andar-Sheet.png" id="8_60kaa"]
-[ext_resource type="Texture2D" uid="uid://c2ytx5n068aw7" path="res://sprites/Player/Andar_arma/Andar_arma-Sheet.png" id="9_8wp63"]
+[ext_resource type="Texture2D" uid="uid://dwbgxg4ij0726" path="res://sprites/Player/Atirar/Tiro_andando/tiro_andando-Sheet.png" id="8_insgv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mnbin"]
 texture = ExtResource("2_l5006")
@@ -594,11 +592,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_mnbin")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5u2p"]
-size = Vector2(38, 62)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iehfs"]
-atlas = ExtResource("1_s6c6h")
-region = Rect2(0, 0, 16, 16)
+size = Vector2(38, 60)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_73py1"]
 atlas = ExtResource("1_2tqrc")
@@ -608,73 +602,52 @@ region = Rect2(0, 0, 16, 16)
 atlas = ExtResource("1_2tqrc")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_58mob"]
-atlas = ExtResource("7_gsab5")
+[sub_resource type="AtlasTexture" id="AtlasTexture_13i7v"]
+atlas = ExtResource("5_oc6j4")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jfw4j"]
-atlas = ExtResource("7_gsab5")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r7d2"]
+atlas = ExtResource("5_oc6j4")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_el3hb"]
-atlas = ExtResource("6_vmwly")
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw4de"]
+atlas = ExtResource("6_n6e2w")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w1yob"]
-atlas = ExtResource("6_vmwly")
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3fob"]
+atlas = ExtResource("6_n6e2w")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l1wqi"]
-atlas = ExtResource("6_vmwly")
+[sub_resource type="AtlasTexture" id="AtlasTexture_uh5l3"]
+atlas = ExtResource("6_n6e2w")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rbghe"]
-atlas = ExtResource("6_vmwly")
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhbr5"]
+atlas = ExtResource("6_n6e2w")
 region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5k1qe"]
-atlas = ExtResource("6_vmwly")
+[sub_resource type="AtlasTexture" id="AtlasTexture_173ji"]
+atlas = ExtResource("6_n6e2w")
 region = Rect2(64, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5p8vi"]
-atlas = ExtResource("7_6owue")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u6xvr"]
-atlas = ExtResource("7_6owue")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_18ugl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvesx"]
 atlas = ExtResource("8_60kaa")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3asl3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0g4l3"]
 atlas = ExtResource("8_60kaa")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_75j28"]
-atlas = ExtResource("9_8wp63")
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkmu3"]
+atlas = ExtResource("8_insgv")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_86in6"]
-atlas = ExtResource("9_8wp63")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xowlq"]
+atlas = ExtResource("8_insgv")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fphds"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iehfs")
-}],
-"loop": true,
-"name": &"falling",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"falling_gun",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_73py1")
@@ -688,52 +661,41 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_58mob")
+"texture": SubResource("AtlasTexture_13i7v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jfw4j")
+"texture": SubResource("AtlasTexture_6r7d2")
 }],
 "loop": true,
-"name": &"idle_gun",
-"speed": 4.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_el3hb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w1yob")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l1wqi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rbghe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5k1qe")
-}],
-"loop": true,
-"name": &"loaded_shoot",
-"speed": 4.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5p8vi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u6xvr")
-}],
-"loop": true,
-"name": &"shoot",
+"name": &"player_gun_shoot",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_18ugl")
+"texture": SubResource("AtlasTexture_fw4de")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3asl3")
+"texture": SubResource("AtlasTexture_m3fob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uh5l3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhbr5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_173ji")
+}],
+"loop": true,
+"name": &"player_loaded_shoot",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvesx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0g4l3")
 }],
 "loop": true,
 "name": &"walking",
@@ -741,19 +703,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_75j28")
+"texture": SubResource("AtlasTexture_bkmu3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_86in6")
+"texture": SubResource("AtlasTexture_xowlq")
 }],
 "loop": true,
-"name": &"walking_gun",
+"name": &"walking_shooting",
 "speed": 6.0
 }]
 
 [node name="main" type="Node"]
 
 [node name="world" type="Node" parent="."]
+unique_name_in_owner = true
 
 [node name="background" type="TextureRect" parent="world"]
 texture_filter = 1
@@ -777,16 +740,16 @@ position = Vector2(582, 573)
 script = ExtResource("3_2w250")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/CharacterBody2D"]
-position = Vector2(-5, 2)
+position = Vector2(-5, 4)
 shape = SubResource("RectangleShape2D_y5u2p")
 
 [node name="spritePlayer" type="AnimatedSprite2D" parent="player/CharacterBody2D"]
 unique_name_in_owner = true
 process_mode = 3
 texture_filter = 1
-position = Vector2(1, 1)
+position = Vector2(-4, 0)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_fphds")
-animation = &"walking"
+animation = &"walking_shooting"
 autoplay = "idle"
-frame_progress = 0.611008
+offset = Vector2(0.25, 0.5)

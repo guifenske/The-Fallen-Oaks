@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c77npili4pel4"
-path="res://.godot/imported/level_spritesheet.png-26a44dd21a040a5480d5ccba54377d99.ctex"
+uid="uid://yune6n4wv7k0"
+path="res://.godot/imported/Tiro_normal_player-Sheet.png-cf96259ffbb490a4222dd34bbef21269.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/phantom_camera/examples/textures/2D/level_spritesheet.png"
-dest_files=["res://.godot/imported/level_spritesheet.png-26a44dd21a040a5480d5ccba54377d99.ctex"]
+source_file="res://sprites/Player/Atirar/Tiro_normal/Tiro_normal_player-Sheet.png"
+dest_files=["res://.godot/imported/Tiro_normal_player-Sheet.png-cf96259ffbb490a4222dd34bbef21269.ctex"]
 
 [params]
 

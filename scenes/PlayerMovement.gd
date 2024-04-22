@@ -26,6 +26,7 @@ func _physics_process(delta):
 		gun.position = position	
 		gun.position.x -= 3
 		gun.position.y += 10
+		gun.look_at(get_global_mouse_position())	
 	
 	var direction = Input.get_axis("left", "right")
 	
@@ -42,12 +43,8 @@ func _physics_process(delta):
 		if(isShooting):
 			sprite.animation = "walking_shooting"
 		sprite.animation = "walking"
-		if(direction < 0):	
-			sprite.flip_h = true
-			gun.flip_h = true
-		else: 
-			sprite.flip_h = false
-			gun.flip_h = false
+		if(direction < 0):	sprite.flip_h = true
+		else: sprite.flip_h = false
 	else:
 		sprite.animation = "idle"
 		

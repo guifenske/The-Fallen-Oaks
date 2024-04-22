@@ -3,71 +3,72 @@
 [ext_resource type="Texture2D" uid="uid://ccnnkt8pp4ygp" path="res://sprites/Player/Atirar/Tiro_normal/Tiro_normal_arma-Sheet.png" id="1_wp5l0"]
 [ext_resource type="Texture2D" uid="uid://5wnskr2ypxj7" path="res://sprites/Player/Atirar/Tiro_carregado/Tiro_carregado_arma-Sheet.png" id="2_b6d3j"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gn2vq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxice"]
 atlas = ExtResource("1_wp5l0")
 region = Rect2(0, 0, 9, 4)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_phejn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cx1h3"]
 atlas = ExtResource("2_b6d3j")
 region = Rect2(0, 0, 9, 4)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eos6i"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5y4tl"]
 atlas = ExtResource("2_b6d3j")
 region = Rect2(9, 0, 9, 4)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_40nyt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bp7eu"]
 atlas = ExtResource("2_b6d3j")
 region = Rect2(18, 0, 9, 4)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1rkyl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_b51mn"]
 atlas = ExtResource("2_b6d3j")
 region = Rect2(27, 0, 9, 4)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ypmdd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rk7dj"]
 atlas = ExtResource("1_wp5l0")
 region = Rect2(9, 0, 9, 4)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ppnt1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ivrq1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gn2vq")
+"texture": SubResource("AtlasTexture_vxice")
 }],
 "loop": true,
-"name": &"gun_idle",
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_phejn")
+"texture": SubResource("AtlasTexture_cx1h3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_eos6i")
+"texture": SubResource("AtlasTexture_5y4tl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_40nyt")
+"texture": SubResource("AtlasTexture_bp7eu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1rkyl")
+"texture": SubResource("AtlasTexture_b51mn")
 }],
 "loop": true,
-"name": &"gun_loaded_shoot",
+"name": &"loaded_shoot",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gn2vq")
+"texture": SubResource("AtlasTexture_vxice")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ypmdd")
+"texture": SubResource("AtlasTexture_rk7dj")
 }],
 "loop": true,
-"name": &"gun_shoot",
+"name": &"shoot",
 "speed": 5.0
 }]
 
-[node name="Gun" type="AnimatedSprite2D"]
-position = Vector2(704, 386)
+[node name="Sprite2D" type="AnimatedSprite2D"]
+position = Vector2(790, 518)
 scale = Vector2(4, 4)
-sprite_frames = SubResource("SpriteFrames_ppnt1")
-animation = &"gun_idle"
+sprite_frames = SubResource("SpriteFrames_ivrq1")
+animation = &"idle"
+autoplay = "idle"

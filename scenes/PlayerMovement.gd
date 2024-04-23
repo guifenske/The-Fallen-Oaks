@@ -22,25 +22,7 @@ func _physics_process(delta):
 	if(hasGun && !isGunInstantiated):
 		isGunInstantiated = true
 		instantiate_gun()
-
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") && is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	if(direction != 0):
-		if(isShooting):
-			sprite.animation = "walking_shooting"
-		else:	
-			sprite.animation = "walking"
-			if(direction < 0):	sprite.flip_h = true
-			else: sprite.flip_h = false
-	else:
-		if(!isShooting && !isLoadedShoot):	sprite.animation = "idle"
 		
-	velocity.x = direction * SPEED
-	# Add the gravity.
-	velocity.y += gravity * delta	
-	
 	if(hasGun):
 		gun.position = position
 		gun.position.x -= 3
@@ -72,6 +54,24 @@ func _physics_process(delta):
 		else:
 			isShooting = false
 			isLoadedShoot = false
-			gun.animation = "idle"	
+			gun.animation = "idle"		
+
+	# Handle jump.
+	if Input.is_action_just_pressed("jump") && is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	if(direction != 0):
+		if(isShooting):
+			sprite.animation = "walking_shooting"
+		elif(!isLoadedShoot):	
+			sprite.animation = "walking"
+			if(direction < 0):	sprite.flip_h = true
+			else: sprite.flip_h = false
+	else:
+		if(!isShooting && !isLoadedShoot):	sprite.animation = "idle"
+		
+	velocity.x = direction * SPEED
+	# Add the gravity.
+	velocity.y += gravity * delta	
 	
 	move_and_slide()

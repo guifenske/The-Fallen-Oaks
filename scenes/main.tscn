@@ -1,7 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://c6o6bany3fxa7"]
+[gd_scene load_steps=25 format=3 uid="uid://c6o6bany3fxa7"]
 
 [ext_resource type="Texture2D" uid="uid://cc06r44qc4akl" path="res://sprites/Player/Idle/Idle-Sheet.png" id="1_2tqrc"]
-[ext_resource type="Script" path="res://scenes/main.gd" id="1_147my"]
 [ext_resource type="Texture2D" uid="uid://c82tl3jgi2f3o" path="res://sprites/background.png" id="1_njilj"]
 [ext_resource type="Texture2D" uid="uid://4a1moetuykyv" path="res://sprites/Terrain (16x16).png" id="2_l5006"]
 [ext_resource type="Script" path="res://scenes/PlayerMovement.gd" id="3_2w250"]
@@ -589,7 +588,8 @@ texture = ExtResource("2_l5006")
 20:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_imcen"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_mnbin")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5u2p"]
@@ -610,10 +610,6 @@ region = Rect2(0, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_6r7d2"]
 atlas = ExtResource("5_oc6j4")
 region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fw4de"]
-atlas = ExtResource("6_n6e2w")
-region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m3fob"]
 atlas = ExtResource("6_n6e2w")
@@ -673,9 +669,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fw4de")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_m3fob")
 }, {
 "duration": 1.0,
@@ -715,7 +708,6 @@ animations = [{
 }]
 
 [node name="main" type="Node"]
-script = ExtResource("1_147my")
 
 [node name="world" type="Node" parent="."]
 unique_name_in_owner = true
@@ -730,6 +722,7 @@ texture = ExtResource("1_njilj")
 stretch_mode = 1
 
 [node name="terrain" type="TileMap" parent="world"]
+texture_filter = 1
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_imcen")
 format = 2
@@ -737,21 +730,22 @@ layer_0/tile_data = PackedInt32Array(1310705, 393216, 0, 1376241, 393216, 1, 144
 
 [node name="player" type="Node" parent="."]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="player"]
+[node name="PlayerBody" type="CharacterBody2D" parent="player"]
+unique_name_in_owner = true
 position = Vector2(582, 573)
 script = ExtResource("3_2w250")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player/CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/PlayerBody"]
 position = Vector2(-5, 4)
 shape = SubResource("RectangleShape2D_y5u2p")
 
-[node name="spritePlayer" type="AnimatedSprite2D" parent="player/CharacterBody2D"]
+[node name="spritePlayer" type="AnimatedSprite2D" parent="player/PlayerBody"]
 unique_name_in_owner = true
 process_mode = 3
 texture_filter = 1
 position = Vector2(-4, 0)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_fphds")
-animation = &"walking_shooting"
+animation = &"player_loaded_shoot"
 autoplay = "idle"
 offset = Vector2(0.25, 0.5)

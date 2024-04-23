@@ -53,7 +53,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"loaded_shoot",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -71,7 +71,7 @@ animations = [{
 position = Vector2(790, 518)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_ivrq1")
-animation = &"shoot"
+animation = &"loaded_shoot"
 autoplay = "idle"
 script = ExtResource("3_icutj")
 

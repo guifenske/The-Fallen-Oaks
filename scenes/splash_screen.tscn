@@ -1,0 +1,225 @@
+[gd_scene load_steps=23 format=3 uid="uid://dhalxqn2dlyeb"]
+
+[ext_resource type="Texture2D" uid="uid://b452vye1am2id" path="res://sprites/splash_screen/tree_splash.png" id="1_0qxxr"]
+[ext_resource type="Script" path="res://scenes/AnimationPlayer.gd" id="2_1eq3u"]
+[ext_resource type="Texture2D" uid="uid://dmu1nu85bp104" path="res://sprites/light.png" id="2_lk3y1"]
+[ext_resource type="Texture2D" uid="uid://by35fvmr6ml0k" path="res://sprites/splash_screen/animated_splash_ring.png" id="4_72kyl"]
+[ext_resource type="Script" path="res://scenes/ring_sprite.gd" id="5_s2qct"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a4rew"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0qxxr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65k67"]
+atlas = ExtResource("4_72kyl")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yj0w"]
+atlas = ExtResource("4_72kyl")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2e8v"]
+atlas = ExtResource("4_72kyl")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvov6"]
+atlas = ExtResource("4_72kyl")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50m4o"]
+atlas = ExtResource("4_72kyl")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aoc0f"]
+atlas = ExtResource("4_72kyl")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55pvu"]
+atlas = ExtResource("4_72kyl")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hd5f"]
+atlas = ExtResource("4_72kyl")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yylwv"]
+atlas = ExtResource("4_72kyl")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufbwg"]
+atlas = ExtResource("4_72kyl")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtc6b"]
+atlas = ExtResource("4_72kyl")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjjpc"]
+atlas = ExtResource("4_72kyl")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_prd0d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65k67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yj0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2e8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvov6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50m4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aoc0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55pvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hd5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yylwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufbwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtc6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjjpc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_amq80"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_8qx8n"]
+resource_name = "fade_out"
+length = 5.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 4.2, 5.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lrnrd"]
+_data = {
+"RESET": SubResource("Animation_amq80"),
+"fade_out": SubResource("Animation_8qx8n")
+}
+
+[node name="SplashScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -35.0
+offset_top = -70.0
+offset_right = 1216.0
+offset_bottom = 706.0
+color = Color(0, 0, 0, 1)
+
+[node name="tree_sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(559, 314)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_a4rew")
+autoplay = "default"
+
+[node name="ring_sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(559, 314)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_prd0d")
+autoplay = "default"
+script = ExtResource("5_s2qct")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1163.0
+offset_bottom = 662.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lrnrd")
+}
+autoplay = "fade_out"
+script = ExtResource("2_1eq3u")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture_filter = 1
+position = Vector2(557, 291)
+scale = Vector2(36.25, 30.125)
+shadow_enabled = true
+texture = ExtResource("2_lk3y1")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="AnimationPlayer" method="_on_animation_finished"]

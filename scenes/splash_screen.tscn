@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://dhalxqn2dlyeb"]
 
 [ext_resource type="Texture2D" uid="uid://b452vye1am2id" path="res://sprites/splash_screen/tree_splash.png" id="1_0qxxr"]
-[ext_resource type="Script" path="res://scenes/AnimationPlayer.gd" id="2_1eq3u"]
+[ext_resource type="Script" path="res://scenes/on_splash_screen_finish.gd" id="2_1eq3u"]
 [ext_resource type="Texture2D" uid="uid://dmu1nu85bp104" path="res://sprites/light.png" id="2_lk3y1"]
 [ext_resource type="Texture2D" uid="uid://by35fvmr6ml0k" path="res://sprites/splash_screen/animated_splash_ring.png" id="4_72kyl"]
 [ext_resource type="Script" path="res://scenes/ring_sprite.gd" id="5_s2qct"]
@@ -179,6 +179,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = -35.0
 offset_top = -70.0
 offset_right = 1216.0

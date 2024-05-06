@@ -17,6 +17,10 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalBus="*res://scenes/SignalBus.gd"
+
 [display]
 
 window/size/mode=3
@@ -30,7 +34,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg", "res://addons/script-ide/plugin.cfg")
+enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
 
 [input]
 
@@ -71,6 +75,11 @@ mouse_right={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Main"
+2d_physics/layer_2="Dialogue"
+
 [physics]
 
 2d/default_gravity=2200.0
@@ -78,4 +87,4 @@ mouse_right={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
+renderer/rendering_method="mobile"

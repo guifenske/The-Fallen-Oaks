@@ -9,13 +9,12 @@ var isLoadedShoot = false
 var hasGun = true
 var gunNodeScene = preload("res://scenes/gun.tscn")
 var isGunInstantiated = false
-@onready var main = get_tree().get_root().get_node("main")
 var gun = null
 
 func instantiate_gun():
 	gun = gunNodeScene.instantiate(PackedScene.GEN_EDIT_STATE_DISABLED)
 	gun.position = position
-	main.add_child(gun)
+	get_tree().get_root().get_node("main").get_node("player").add_child(gun)
 
 func _physics_process(delta):
 	var direction = Input.get_axis("left", "right")

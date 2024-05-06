@@ -9,9 +9,12 @@ radius = 9.05539
 [node name="Bullet" type="CharacterBody2D"]
 texture_filter = 1
 position = Vector2(821, 538)
-collision_layer = 2
-collision_mask = 0
 script = ExtResource("1_ecp87")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_pjww6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)
@@ -19,3 +22,5 @@ texture = ExtResource("1_0fegg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_pjww6")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

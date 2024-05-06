@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw48301rm26ke"]
+
+[ext_resource type="Script" path="res://scenes/DialogPlayer.gd" id="1_ehf71"]
+
+[node name="DialogPlayer" type="CanvasLayer"]
+script = ExtResource("1_ehf71")
+
+[node name="Text" type="Label" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+offset_left = 339.0
+offset_top = 91.0
+offset_right = 836.0
+offset_bottom = 252.0
+autowrap_mode = 3
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.085
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

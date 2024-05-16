@@ -27,29 +27,22 @@ func _physics_process(delta):
 		gun.position.x -= 3
 		gun.position.y += 10
 		gun.look_at(get_global_mouse_position())
+		if(sprite.flip_h && get_global_mouse_position().x > position.x):
+			sprite.flip_h = false
+		elif(!sprite.flip_h && get_global_mouse_position().x < position.x):
+			sprite.flip_h = true	
+				
 		if(Input.is_action_pressed("mouse_right")):
 			isShooting = true			
 			if(direction == 0):	sprite.animation = "player_gun_shoot"
 			else: sprite.animation = "walking_shooting"
-			
-			if(sprite.flip_h && get_global_mouse_position().x > position.x):
-				sprite.flip_h = false
-			elif(!sprite.flip_h && get_global_mouse_position().x < position.x):
-				sprite.flip_h = true	
 			
 			gun.animation = "shoot"
 		elif(Input.is_action_pressed("mouse_left")):
 			isLoadedShoot = true			
 			direction = 0
 			if(direction == 0):	sprite.animation = "player_loaded_shoot"
-			
-			if(sprite.flip_h && get_global_mouse_position().x > position.x):
-				sprite.flip_h = false
-			elif(!sprite.flip_h && get_global_mouse_position().x < position.x):
-				sprite.flip_h = true	
-			
 			gun.animation = "loaded_shoot"
-			
 		else:
 			isShooting = false
 			isLoadedShoot = false
@@ -64,8 +57,6 @@ func _physics_process(delta):
 			sprite.animation = "walking_shooting"
 		elif(!isLoadedShoot):	
 			sprite.animation = "walking"
-			if(direction < 0):	sprite.flip_h = true
-			else: sprite.flip_h = false
 	else:
 		if(!isShooting && !isLoadedShoot):	sprite.animation = "idle"
 		

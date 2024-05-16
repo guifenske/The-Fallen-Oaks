@@ -1,10 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmnhajsw3233p"]
+[gd_scene load_steps=5 format=3 uid="uid://dmnhajsw3233p"]
 
 [ext_resource type="Texture2D" uid="uid://jhghqmd0o6vw" path="res://sprites/Player/Bullet/Bullet.png" id="1_0fegg"]
 [ext_resource type="Script" path="res://scenes/bullet.gd" id="1_ecp87"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pjww6"]
 radius = 9.05539
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_56t4o"]
+emission_shape = 2
+emission_sphere_radius = 1.0
+orbit_velocity_max = 1.365
+gravity = Vector3(0, 98, 0)
+scale_min = 0.2
+scale_max = 0.6
+anim_speed_min = 16.0
+anim_speed_max = 16.0
+turbulence_enabled = true
+turbulence_noise_strength = 20.0
 
 [node name="Bullet" type="CharacterBody2D"]
 texture_filter = 1
@@ -22,4 +34,18 @@ shape = SubResource("CircleShape2D_pjww6")
 scale = Vector2(4, 4)
 texture = ExtResource("1_0fegg")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="BreakParticle" type="GPUParticles2D" parent="."]
+texture_filter = 1
+position = Vector2(-225, -43)
+amount = 7
+process_material = SubResource("ParticleProcessMaterial_56t4o")
+texture = ExtResource("1_0fegg")
+lifetime = 2.0
+trail_enabled = true
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

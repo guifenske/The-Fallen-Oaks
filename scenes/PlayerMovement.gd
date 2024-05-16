@@ -14,7 +14,7 @@ var gun = null
 func instantiate_gun():
 	gun = gunNodeScene.instantiate(PackedScene.GEN_EDIT_STATE_DISABLED)
 	gun.position = position
-	get_tree().get_root().get_node("main").get_node("player").add_child(gun)
+	get_parent().add_child(gun)
 
 func _physics_process(delta):
 	var direction = Input.get_axis("left", "right")

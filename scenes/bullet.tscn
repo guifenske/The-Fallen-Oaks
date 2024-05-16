@@ -12,6 +12,8 @@ position = Vector2(821, 538)
 script = ExtResource("1_ecp87")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_pjww6")
@@ -19,8 +21,5 @@ shape = SubResource("CircleShape2D_pjww6")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)
 texture = ExtResource("1_0fegg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_pjww6")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

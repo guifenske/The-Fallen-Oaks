@@ -5,4 +5,4 @@ func _physics_process(delta):
 
 
 func _on_area_2d_area_entered(area):
-	print("test")
+	queue_free()

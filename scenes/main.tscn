@@ -1,10 +1,10 @@
-[gd_scene load_steps=32 format=3 uid="uid://c6o6bany3fxa7"]
+[gd_scene load_steps=33 format=3 uid="uid://c6o6bany3fxa7"]
 
 [ext_resource type="Texture2D" uid="uid://cc06r44qc4akl" path="res://sprites/Player/Idle/Idle-Sheet.png" id="1_2tqrc"]
 [ext_resource type="Texture2D" uid="uid://c82tl3jgi2f3o" path="res://sprites/background.png" id="1_njilj"]
 [ext_resource type="Texture2D" uid="uid://4a1moetuykyv" path="res://sprites/Terrain (16x16).png" id="2_l5006"]
 [ext_resource type="Texture2D" uid="uid://cn4st1q1lqekl" path="res://sprites/Obeliscos/1.png" id="3_1m1tw"]
-[ext_resource type="Script" path="res://scenes/PlayerMovement.gd" id="3_2w250"]
+[ext_resource type="Script" path="res://scenes/Player.gd" id="3_2w250"]
 [ext_resource type="Texture2D" uid="uid://yune6n4wv7k0" path="res://sprites/Player/Atirar/Tiro_normal/Tiro_normal_player-Sheet.png" id="5_oc6j4"]
 [ext_resource type="Texture2D" uid="uid://cxo805i7fqxd7" path="res://sprites/Player/Atirar/Tiro_carregado/Tiro_carregado_player-Sheet.png" id="6_n6e2w"]
 [ext_resource type="Texture2D" uid="uid://c57w4ik8e71vt" path="res://sprites/Player/Andar/Andar-Sheet.png" id="8_60kaa"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b4kpo2ta8yfov" path="res://sprites/Obeliscos/2.png" id="9_3dqeu"]
 [ext_resource type="PackedScene" uid="uid://cjthjfn3smqu8" path="res://scenes/DialogArea.tscn" id="10_ekgfk"]
 [ext_resource type="PackedScene" uid="uid://bw48301rm26ke" path="res://scenes/DialogPlayer.tscn" id="11_igrms"]
+[ext_resource type="Script" path="res://scenes/KeyListener.gd" id="13_gmoyy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mnbin"]
 texture = ExtResource("2_l5006")
@@ -811,3 +812,6 @@ position = Vector2(-3.5, 6.5)
 shape = SubResource("RectangleShape2D_gjrfg")
 
 [node name="DialogPlayer" parent="." instance=ExtResource("11_igrms")]
+
+[node name="KeyListener" type="Node" parent="."]
+script = ExtResource("13_gmoyy")

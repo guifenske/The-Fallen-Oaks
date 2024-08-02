@@ -676,7 +676,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"player_gun_shoot",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -799,7 +799,7 @@ texture_filter = 1
 position = Vector2(-4, 0)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_fphds")
-animation = &"player_loaded_shoot"
+animation = &"player_gun_shoot"
 autoplay = "idle"
 offset = Vector2(0.25, 0.5)
 
@@ -815,3 +815,6 @@ shape = SubResource("RectangleShape2D_gjrfg")
 
 [node name="KeyListener" type="Node" parent="."]
 script = ExtResource("13_gmoyy")
+
+[connection signal="animation_changed" from="player/PlayerBody/spritePlayer" to="player/PlayerBody" method="_on_sprite_player_animation_changed"]
+[connection signal="frame_changed" from="player/PlayerBody/spritePlayer" to="player/PlayerBody" method="_on_sprite_player_frame_changed"]

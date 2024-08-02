@@ -220,7 +220,7 @@ script = ExtResource("2_1eq3u")
 texture_filter = 1
 position = Vector2(557, 291)
 scale = Vector2(36.25, 30.125)
-shadow_enabled = true
+energy = 0.31
 texture = ExtResource("2_lk3y1")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="AnimationPlayer" method="_on_animation_finished"]
